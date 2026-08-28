@@ -75,14 +75,14 @@ git submodule update --init --recursive
 
 This project ships with `CMakePresets.json` for common configurations.
 
-#### Linux
+#### Linux (CMake Preset)
 
 ```sh
 cmake --preset linux
 cmake --build build --preset linux
 ```
 
-#### macOS
+#### macOS (CMake Preset)
 
 ```sh
 cmake --preset macos
@@ -126,7 +126,7 @@ cmake --build . --parallel
 #### Useful CMake Options
 
 | Option | Default | Description |
-|---|---|---|
+| --- | --- | --- |
 | `Launcher_QT_VERSION_MAJOR` | `6` | Major Qt version to build against |
 | `Launcher_ENABLE_JAVA_DOWNLOADER` | `ON` (Win/macOS), `OFF` (Linux) | Build the Java downloader feature |
 | `Launcher_USE_PCH` | `ON` | Use precompiled headers |

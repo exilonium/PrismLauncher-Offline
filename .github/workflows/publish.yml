@@ -1,26 +1,18 @@
+# Publish workflow is disabled for this fork.
+# The upstream Winget job targets PrismLauncher.PrismLauncher which is not
+# registered for this fork. Re-enable and update once a separate Winget
+# package is registered.
 name: Publish
 
 on:
-  release:
-    types: [ released ]
+  workflow_dispatch: # manual trigger only; not auto-triggered on release
 
 permissions: {}
 
 jobs:
-  winget:
-    name: Winget
-
-    permissions:
-      contents: read
-
-    runs-on: ubuntu-slim
-
+  placeholder:
+    name: Disabled (fork - no Winget package)
+    runs-on: ubuntu-latest
     steps:
-      - name: Publish on Winget
-        # @Octol1ttle: Pinned to a commit because no release has been published that works on ubuntu-slim
-        uses: vedantmgoyal2009/winget-releaser@7bd472be23763def6e16bd06cc8b1cdfab0e2fd5 # docs: add description to inputs (#335)
-        with:
-          identifier: PrismLauncher.PrismLauncher
-          version: ${{ github.event.release.tag_name }}
-          installers-regex: 'PrismLauncher-Windows-MSVC(:?-arm64|-Legacy)?-Setup-.+\.exe$'
-          token: ${{ secrets.WINGET_TOKEN }}
+      - name: Notice
+        run: echo "Publish workflow is disabled for this fork. See publish.yml for details."
